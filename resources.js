@@ -1,708 +1,1005 @@
 const resources = [
-  // Clothing
+  // Housing & Homelessness
   {
-    category: "Clothing",
-    name: "Beaverton Seventh-Day Adventist",
-    address: "14645 SW Davis Rd. Beaverton, OR 97007",
-    phone: "503-646-9828",
-    hours: "Tues. 9 a.m.-noon",
-    services: "Walk-in clothes closet",
-    notes: "Bus: 62, 88",
-    transportation: "Bus: 62, 88"
-  },
-  {
-    category: "Clothing",
-    name: "Birthright of Hillsboro",
-    address: "232 NE Lincoln St., Ste. F, Hillsboro, OR 97124",
-    phone: "503-648-6766",
-    hours: "Tues., Wed., Fri. noon-2 p.m.; Thurs. 5:30 p.m.-7:30 p.m.",
-    services: "Maternity and baby clothes up to 12 months. Free confidential pregnancy testing, doctor referrals and housing resources.",
-    notes: "Proof of pregnancy documentation needed to sign up for OHP and WIC.",
-    transportation: "Bus: 46, 48, 57, MAX Blue"
-  },
-  {
-    category: "Clothing",
-    name: "Clothes for Kids",
-    address: "16550 SW Merlo Rd. Beaverton, OR 97006",
-    phone: "503-356-4322",
-    hours: "Appointment required",
-    services: "Free clothing",
-    notes: "For low-income students attending Beaverton schools. Not for adults, infants, or toddlers. Must make an appointment over the phone or through a ParentSquare account.",
-    transportation: "Bus: 67, MAX: Blue"
-  },
-  {
-    category: "Clothing",
-    name: "Elevate Him",
-    address: "1513 SW Marlow St. Ste. A Portland, OR 97225",
-    phone: "503-810-1607",
-    hours: "Call to make an appointment",
-    services: "Men's resource center offering clothes, supportive men's groups, and haircuts and styling",
-    notes: "",
+    category: "Housing & Homelessness",
+    name: "Coordinated Entry (Carnegie Resource Center)",
+    address: "3001 Oakes Ave, Everett, WA 98201",
+    phone: "2-1-1 or (800) 223-8145",
+    hours: "Mon-Fri 1pm-4pm (Sign-in 12:45pm)",
+    services: "In-person intake for literally homeless.",
+    notes: "wa211.org",
     transportation: ""
   },
   {
-    category: "Clothing",
-    name: "Helping Hands Clothes Closet",
-    address: "14986 NW Cornell Rd. Portland, OR 97229",
-    phone: "503-292-9293",
-    hours: "Wed. 9:30-11:30 a.m. and 4-6 p.m.",
-    services: "Adult and children's clothing and shoes",
-    notes: "At Sunset Presbyterian Church. No appointment needed.",
-    transportation: "Bus: 48"
-  },
-
-  // Day Services/Hygiene
-  {
-    category: "Day Services/Hygiene",
-    name: "Just Compassion of East Washington County",
-    address: "12264 SW Hall Blvd. Tigard, OR 97223",
-    phone: "503-624-4666",
-    hours: "7 a.m.-7 p.m. daily",
-    services: "Welcoming, low-barrier space for people experiencing homelessness. Meals, showers, connection with providers, help finding stable housing.",
-    notes: "For people experiencing homelessness.",
-    transportation: "Bus: 12, 78"
-  },
-  {
-    category: "Day Services/Hygiene",
-    name: "Open Door HousingWorks",
-    address: "34420 SW Tualatin Valley Hwy. Hillsboro, OR 97123",
-    phone: "503-640-6689",
-    hours: "Mon.-Fri. 9 a.m.-3 p.m.",
-    services: "Day shelter offering meals, food boxes, showers, laundry, mail and phone access",
-    notes: "",
-    transportation: "Bus: 57"
-  },
-  {
-    category: "Day Services/Hygiene",
-    name: "Project Homeless Connect",
-    address: "SE 6th Ave. Hillsboro, OR 97123 (Located on SE 6th between SE Oak St. and SE Baseline - across from Tuality Hospital.)",
-    phone: "971-713-3930",
-    hours: "Daily 7 a.m.-4 p.m.",
-    services: "Breakfast and lunch, comfortable day center space, cell phone charging stations, computer access, laundry, showers, food, assistance with obtaining state ID, housing resources, and other services.",
-    notes: "",
-    transportation: "Bus: 57, MAX: Blue"
-  },
-
-  // Disability and Aging Support
-  {
-    category: "Disability and Aging Support",
-    name: "Disability, Aging and Veteran Services",
-    address: "5240 NE Elam Young Pkwy., Ste. 300, Hillsboro, OR. 97124",
-    phone: "503-846-3060",
+    category: "Housing & Homelessness",
+    name: "Housing Authority of Snohomish County (HASCO)",
+    address: "12711 4th Ave West, Everett, WA 98204",
+    phone: "(425) 290-8499",
     hours: "Mon.-Fri. 8 a.m.-5 p.m.",
-    services: "Programs and services to enhance quality of life and ensure basic needs are met. Includes Oregon Project Independence, food and nutrition services.",
-    notes: "For Washington County seniors, veterans, and people with disabilities. Most programs serve those 60 years and older, but veterans and benefits enrollment center serves all ages.",
+    services: "Low Income Affordable Housing, Vouchers.",
+    notes: "www.hasco.org",
     transportation: ""
   },
   {
-    category: "Disability and Aging Support",
-    name: "Social Security Administration",
-    address: "11975 SW Second St. Ste. 100 Beaverton, OR 97005",
-    phone: "1-800-772-1213",
-    hours: "Mon.-Fri. 9 a.m.-4 p.m.",
-    services: "General information about Social Security Disability Insurance and Supplemental Security Income",
-    notes: "",
-    transportation: "Bus: 53, 57, 78, 88"
-  },
-
-  // Domestic Violence/Sexual Assault
-  {
-    category: "Domestic Violence/Sexual Assault",
-    name: "Domestic Violence Resource Center, Inc.",
-    address: "Confidential",
-    phone: "503-469-8620 (24/7 crisis line)",
-    hours: "Advocacy & Protective Orders: Mon.-Thurs. 8:30a.m.-4 p.m., Fri. 8:30a.m.-2 p.m.; Counseling Services: Mon.-Thurs. 10 a.m.-7 p.m.",
-    services: "Advocacy services for survivors of domestic violence, advocate support for filing protective orders, safety planning, resource referrals, individual and group counseling for adults, individual counseling for children and teens (ages 5-18).",
-    notes: "All services are confidential and free of charge. Servicios disponibles en español.",
-    transportation: ""
-  },
-  {
-    category: "Domestic Violence/Sexual Assault",
-    name: "Family Justice Center",
-    address: "735 SW 158th Ave. Ste. 100 Beaverton, OR 97006",
-    phone: "503-430-8300",
-    hours: "Mon.-Fri. 8:30a.m.- 4 p.m.",
-    services: "Wrap-around services for survivors of Domestic Violence, Sexual Assault, Sexual Exploitation, Elder Abuse, Family Violence, and their children. Childcare, food, hygiene, and legal support, referrals for housing, benefits, and mental health support.",
-    notes: "",
-    transportation: ""
-  },
-  {
-    category: "Domestic Violence/Sexual Assault",
-    name: "Kim's Place",
-    address: "Confidential location",
-    phone: "971-415-0007",
-    hours: "Call or fill out online application",
-    services: "Place of refuge, sober living home.",
-    notes: "Caters specifically to women who have left the sex industry, including trafficked women. Goal is to give women dignity, power over their lives, and help them transition into their own home, job, and safety.",
-    transportation: ""
-  },
-  {
-    category: "Domestic Violence/Sexual Assault",
-    name: "Monika's House",
-    address: "Confidential location (Hillsboro)",
-    phone: "1-866-469-8600 (24/7 crisis line)",
-    hours: "Call the crisis line to get connected",
-    services: "Safe, confidential emergency shelter and domestic violence crisis hotline. Services for shelter residents include advocacy, case management, and support groups.",
-    notes: "",
-    transportation: ""
-  },
-  {
-    category: "Domestic Violence/Sexual Assault",
-    name: "Oregon Crime Victims Law Center",
-    address: "Confidential",
-    phone: "503-208-8160",
-    hours: "Office visits by appointment only",
-    services: "Free legal information, referrals and representation for victims of crime regarding their rights in criminal cases; legal information and representation in protective order cases for survivors of domestic violence, sexual assault and stalking.",
-    notes: "Call for intake to determine eligibility for services. Serves all Oregon counties.",
-    transportation: ""
-  },
-  {
-    category: "Domestic Violence/Sexual Assault",
-    name: "Sexual Assault Resource Center (SARC)",
-    address: "Confidential",
-    phone: "1-888-640-5311 (24/7 crisis line)",
-    hours: "Call the crisis line to get connected",
-    services: "Immediate 24-hour response and support to survivors of sexual assault, case management, education and outreach programs, support groups, and free mental health services.",
-    notes: "",
-    transportation: ""
-  },
-
-  // Family and Parenting Support
-  {
-    category: "Family and Parenting Support",
-    name: "Children and Youth Counseling, DVRC",
-    address: "Confidential",
-    phone: "503-521-7997",
-    hours: "Mon.-Thurs. 10 a.m.-7 p.m.",
-    services: "Individual counseling services for children and youth who have witnessed family violence; individual counseling for teens 14 to 18 who have experienced teen dating violence.",
-    notes: "Bilingual (Spanish) services available. Children and youth under 14 must have a non-offending parent or guardian willing to receive some parental education. Call for current appointment availability and to schedule intake.",
-    transportation: ""
-  },
-  {
-    category: "Family and Parenting Support",
-    name: "Morrison Child and Family Services",
-    address: "15455 NW Greenbrier Pkwy. Ste. 200 Beaverton, OR 97006",
-    phone: "503-258-4495",
-    hours: "Mon.-Fri. 8 a.m-7 p.m.",
-    services: "Specialized outpatient mental health services for children birth through 18. Must be under 18 to start services.",
-    notes: "Intake hours: 8 a.m.-4 p.m. Mon.-Fri.",
-    transportation: ""
-  },
-  {
-    category: "Family and Parenting Support",
-    name: "Oregon Child Development Coalition (OCDC)",
-    address: "Confidential",
-    phone: "503-213-1191 or 503-359-0649",
-    hours: "Call for more information",
-    services: "Early Childhood education for children from 6 weeks to 5 years old. Provides school readiness, family advocacy and engagement, health screenings and referrals, healthy meals, and other services.",
-    notes: "",
-    transportation: ""
-  },
-  {
-    category: "Family and Parenting Support",
-    name: "Safe Families for Children",
-    address: "Confidential",
-    phone: "503-906-1027 (Spanish: 503-614-1299)",
-    hours: "Call or fill out a referral on the website",
-    services: "Support to families in crisis by assisting parents to get back on their feet without fear of losing custody of their children. Placing children and teens in loving, safe environments with volunteer host families while parents work on wellness goals. Mentoring and coaching of parents.",
-    notes: "All at no cost to families. Serves the tri-county area.",
-    transportation: ""
-  },
-  {
-    category: "Family and Parenting Support",
-    name: "Safe Oregon",
-    address: "Confidential",
-    phone: "844-472-3367 (Call or Text 24/7)",
-    hours: "24/7, 365 days a year",
-    services: "Way to report safety threats or potential acts of violence confidentially or anonymously. Tips are promptly analyzed and forwarded to designated personnel.",
-    notes: "Not for immediate emergency response. Email: tips@safeoregon.com, website: www.safeoregon.com/report-a-tip/.",
-    transportation: ""
-  },
-  {
-    category: "Family and Parenting Support",
-    name: "Tigard-Tualatin Family Resource Center",
-    address: "9500 SW Murdock St. Tigard, OR 97224 (James Templeton Elementary School)",
-    phone: "503-603-1585",
-    hours: "Open on school days",
-    services: "Basic needs resource connection, information on how to get clothing for babies and children, school supplies, and early learning supports.",
-    notes: "Serves families with children ages 0-18 who live within the Tigard-Tualatin School District boundary.",
-    transportation: ""
-  },
-
-  // Food and Grocery Assistance
-  {
-    category: "Food and Grocery Assistance",
-    name: "Beaverton Resource Center",
-    address: "13565 SW Walker Rd. Beaverton, OR 97005",
-    phone: "503-591-9025",
-    hours: "Mon.-Fri. 9 a.m.-2 p.m.; Office hours: Tues., Wed., and Fri. 9 a.m.-1 p.m.",
-    services: "Central hub for those struggling with hunger, housing insecurity and poverty.",
-    notes: "Referral-based access to Holy Trinity Food Closet.",
-    transportation: ""
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "Beaverton Seventh-Day Adventist",
-    address: "14645 SW Davis Rd. Beaverton, OR 97007",
-    phone: "503-646-9828 ext. 16",
-    hours: "Tues. 9 a.m.-noon, 12:30-1:30 p.m.",
-    services: "Helping Hands Food Pantry offers food boxes.",
-    notes: "",
-    transportation: "Bus: 62, 88"
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "Cascade Vineyard Church",
-    address: "14460 SW 114th Ave. Tigard (house behind Christ the King Lutheran Church)",
-    phone: "503-684-8225",
-    hours: "Thurs. noon-3 p.m.",
-    services: "Food pantry",
-    notes: "Lottery system. Available to anyone in need.",
-    transportation: "Bus: 94"
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "Community Table Food Pantry",
-    address: "1095 S Beech St. Cornelius, OR 97113",
-    phone: "503-724-9766",
-    hours: "1-3 p.m. 1st Wed., 10 a.m.-noon 3rd Sat.",
-    services: "Emergency food boxes and clothes closet.",
-    notes: "Walk-ins welcome. English/Spanish.",
-    transportation: "Bus: 57"
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "Forest Grove Foursquare Church and Food Pantry",
-    address: "1719 Cedar St. Forest Grove, OR 97116",
-    phone: "503-357-4400",
-    hours: "Thurs. 10 a.m.-12:30 p.m.",
-    services: "Food pantry",
-    notes: "For low-income residents of Dilley, Cornelius, Forest Grove, Gales Creek, Gaston and Laurelwood.",
-    transportation: "Bus: 57"
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "Helping Hands Food Pantry",
-    address: "14986 NW Cornell Rd. Portland, OR 97229",
-    phone: "503-292-9293",
-    hours: "Wed. 9:30-11:30 a.m. and 4-6 p.m.",
-    services: "Drive-thru style food pantry",
-    notes: "Located at Sunset Presbyterian Church. Volunteers collect a list of groceries and bring it out to you.",
-    transportation: "Bus: 48"
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "Hillsboro Seventh-Day Adventist",
-    address: "367 NE Grant St. Hillsboro, OR 97124",
-    phone: "503-648-3922",
-    hours: "Thurs. 6:30-8 p.m.",
-    services: "Food boxes and clothing closet.",
-    notes: "For Washington County residents.",
-    transportation: "Bus: 46"
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "Holy Trinity Food Closet",
-    address: "13715 SW Walker Rd. Beaverton, OR 97005",
-    phone: "503-591-9025",
-    hours: "Tues., Wed., Fri. 10 a.m.-12:30 p.m.",
-    services: "Food pantry by appointment.",
-    notes: "Make an appointment through Care to Share. May receive assistance twice a month.",
-    transportation: "Bus: 59, 62, 67"
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "Oregon Food Bank",
-    address: "Multiple locations",
-    phone: "503-439-6510",
-    hours: "Phone hours: Mon.-Fri. 8 a.m.-4:30 p.m.",
-    services: "Referral service to help individuals find perishable and non-perishable food assistance.",
-    notes: "Visit website to find nearest food pantry. Available in 19 languages.",
-    transportation: ""
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "Sherwood Helping Hands",
-    address: "22280 SW Washington St. Sherwood, OR 97140",
-    phone: "503-625-7975",
-    hours: "9-10 a.m. 3rd Thurs.",
-    services: "Food boxes for families by appointment.",
-    notes: "Located at Sherwood United Methodist Church.",
-    transportation: "Bus: 94"
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "St. Francis Food Pantry",
-    address: "15659 SW Oregon St. Sherwood, OR 97140",
-    phone: "503-625-7067",
-    hours: "Wed. 9-11 a.m. and 5-7 p.m.; Thurs. 9-11 a.m.",
-    services: "Shopping-style food pantry",
-    notes: "For low-income residents of Tualatin, Sherwood, Newberg and King City.",
-    transportation: "Bus: 94"
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "St. Vincent de Paul Food Pantry - Forest Grove",
-    address: "St. Anthony, 1660 Elm St. Forest Grove, OR 97116",
-    phone: "503-357-9647",
-    hours: "Call Mon.-Sat. 9 a.m.-noon for appt.",
-    services: "Food pantry by appointment.",
-    notes: "",
-    transportation: ""
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "St. Vincent de Paul Food Pantry - Hillsboro",
-    address: "St. Matthew's, 442 SE Third Ave. Hillsboro, OR 97123",
-    phone: "503-693-7528",
-    hours: "Mon. and Wed. 9-11:30 a.m.",
-    services: "Food pantry; furniture, rent and utility assistance available.",
-    notes: "Mobile kitchen lunch served Wednesdays.",
-    transportation: ""
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "St. Vincent de Paul Food Pantry - St. Anthony Tigard",
-    address: "9905 SW McKenzie St. Tigard, OR 97223",
-    phone: "503-684-8280",
-    hours: "Wed. noon-2:30 p.m., Thurs. 1-3 p.m., Sat. 10 a.m.-noon",
-    services: "Food pantry.",
-    notes: "Serves 97223 and 97224. Provide proof of Tigard residency.",
-    transportation: ""
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "St. Vincent de Paul Food Pantry - St. Cecilia",
-    address: "12250 SW Fifth St. Beaverton, OR 97005",
-    phone: "503-644-2619",
-    hours: "Mon.-Fri. by appt.",
-    services: "Food pantry.",
-    notes: "Contact Care to Share for appt.",
-    transportation: ""
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "St. Vincent de Paul Food Pantry - St. Elizabeth Ann Seton",
-    address: "3145 SW 192nd Ave. Aloha, OR 97003",
-    phone: "503-649-5841",
-    hours: "Mon.-Fri. 11 a.m.-2 p.m. by appt.",
-    services: "Food pantry.",
-    notes: "",
-    transportation: ""
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "St. Vincent de Paul Food Pantry - St. Juan Diego",
-    address: "5995 NW 178th Ave. Portland, OR 97229",
-    phone: "503-985-6046",
-    hours: "Mon. 4-5:30 p.m., Fri. 11 a.m.-12:30 p.m.",
-    services: "Food pantry.",
-    notes: "",
-    transportation: ""
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "Supplemental Nutrition Assistance Program (SNAP)",
-    address: "Multiple locations",
-    phone: "503-693-4555 (Hillsboro), 503-646-9952 (Beaverton), 503-670-9711 (Tigard)",
-    hours: "Mon.-Fri. 8 a.m.-5 p.m.",
-    services: "Helps low-income people buy food. Benefits provided on a debit card.",
-    notes: "Apply online at www.oregon.gov/DHS.",
-    transportation: "MAX Blue (Hillsboro), Bus 48, 67 (Beaverton), Bus 76, 78 (Tigard)"
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "True Life Fellowship Food Pantry",
-    address: "1895 NW 169th Pl. Beaverton, OR 97006",
-    phone: "503-810-7426",
-    hours: "2nd and 4th Sat. of the month 10 a.m.-1 p.m.",
-    services: "Emergency food boxes",
-    notes: "For low-income Washington County residents.",
-    transportation: "Bus 89"
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "Tualatin Schoolhouse Pantry",
-    address: "3550 SW Borland Rd. Tualatin, OR 97062",
-    phone: "503-783-0721",
-    hours: "Mon. 4-7 p.m., Wed. and Fri. 10 a.m.-1 p.m.",
-    services: "Shopping-style pantry twice a month.",
-    notes: "For residents of Durham, Lake Oswego, Tualatin, West Linn and Wilsonville located at Rolling Hills Community Church.",
-    transportation: ""
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "Unity Church of Beaverton Food Pantry",
-    address: "12650 SW Fifth St. Beaverton, OR 97005",
-    phone: "503-646-3364",
-    hours: "Tues. and Wed. 10 a.m.-4 p.m.",
-    services: "Food boxes",
-    notes: "For low-income residents within specific zip codes: 97005, 97006, 97007, 97008.",
-    transportation: "Bus: 52, 76, 78"
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "Vernonia Cares Food Bank",
-    address: "547 Weed Ave. Vernonia, OR 97064",
-    phone: "503-429-1414",
-    hours: "Tues. and Thurs. 10 a.m.-2 p.m.",
-    services: "Emergency food boxes provide 3-day supply of groceries",
-    notes: "For low-income residents of Vernonia, Timber, Manning and Buxton.",
-    transportation: ""
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "Wapato Valley Church Food Pantry",
-    address: "200 Front St. Gaston, OR 97119",
-    phone: "503-985-3351",
-    hours: "Thurs. 5-7 p.m.",
-    services: "Food bank and clothing closet.",
-    notes: "For low-income residents of Gales Creek, Gaston, Laurelwood and Cherry Grove.",
-    transportation: ""
-  },
-  {
-    category: "Food and Grocery Assistance",
-    name: "Women, Infants and Children (WIC)",
-    address: "Multiple locations",
-    phone: "503-846-3555",
-    hours: "Mon. 10 a.m.-6:30 p.m. (Hillsboro/Beaverton); Tues.-Fri. 8 a.m.-4:30 p.m.",
-    services: "Healthy food benefits, growth monitoring, and referrals.",
-    notes: "For pregnant/post-partum women, infants, and children up to age 5.",
-    transportation: "MAX Blue (Hillsboro), Bus 52, 76, 78 (Beaverton)"
-  },
-
-  // Health Care
-  {
-    category: "Health Care",
-    name: "Borland Free Clinic",
-    address: "3550 SW Borland Rd. Tualatin, OR 97062",
-    phone: "503-974-8887",
-    hours: "Mon. and Thurs. 3-7 p.m.",
-    services: "Primary care for uninsured and under-insured patients. Chronic disease management and medication assistance.",
-    notes: "Bilingüe. Walk-ins and appts. welcome.",
-    transportation: ""
-  },
-  {
-    category: "Health Care",
-    name: "Planned Parenthood - Columbia Willamette",
-    address: "12220 SW First St. Ste. 200 Beaverton, OR 97005",
-    phone: "888-576-7526",
-    hours: "Mon. and Wed. 10 a.m.-5:30 p.m.; Tues., Thurs., Fri. 8 a.m.-3:30 p.m.",
-    services: "Low-cost birth control, Pap exams, pregnancy testing, STI/HIV treatment, medication abortion, and gender affirming hormone services.",
-    notes: "Insured or uninsured accepted. Financial assistance available.",
-    transportation: "Bus: 76, 78, MAX"
-  },
-  {
-    category: "Health Care",
-    name: "Oregon Health Plan/Medicaid",
-    address: "Confidential",
-    phone: "800-273-0557",
-    hours: "Mon.-Fri. 8 a.m.-5 p.m.",
-    services: "Assists members with medical, dental or mental health care access. Provides information and referral for OHP.",
-    notes: "",
-    transportation: ""
-  },
-  {
-    category: "Health Care",
-    name: "Virginia Garcia - Beaverton Dental @ The Round",
-    address: "12600 SW Crescent St. Beaverton, OR 97005",
-    phone: "503-718-3675",
-    hours: "Mon. and Fri. 7 a.m.-6 p.m.",
-    services: "Dental Services",
-    notes: "",
-    transportation: "Bus: 20, 57, MAX Blue"
-  },
-  {
-    category: "Health Care",
-    name: "Virginia Garcia - Beaverton Wellness Center",
-    address: "2725 SW Cedar Hills Blvd. Ste. 200, Beaverton, OR 97005",
-    phone: "503-352-6000",
-    hours: "Mon. and Fri. 8 a.m.-7 p.m.",
-    services: "Medical services",
-    notes: "",
-    transportation: "Bus: 20, 57, MAX Blue"
-  },
-  {
-    category: "Health Care",
-    name: "Virginia Garcia - Beaverton Wellness Center Pharmacy",
-    address: "2725 SW Cedar Hills Blvd. Ste. 200, Beaverton, OR 97005",
-    phone: "503-352-6006",
-    hours: "Mon.-Fri. (various); Wed. 10 a.m.-6 p.m.",
-    services: "Pharmacy",
-    notes: "",
-    transportation: "Bus: 20, 57, MAX Blue"
-  },
-  {
-    category: "Health Care",
-    name: "Virginia Garcia - Beaverton Vision",
-    address: "12600 SW Crescent St. Ste. 130, Beaverton, OR 97005",
-    phone: "503-352-1699",
-    hours: "Mon.-Fri. 8 a.m.-5 p.m.",
-    services: "Vision care",
-    notes: "",
-    transportation: ""
-  },
-  {
-    category: "Health Care",
-    name: "Virginia Garcia - Cornelius Wellness Center",
-    address: "1151 N Adair St. Cornelius, OR 97113",
-    phone: "503-359-5564",
-    hours: "Mon., Tues., Fri. 8:30 a.m.-5:15 p.m.; Wed. 9:30 a.m.; Thurs. 10:30 a.m.-7:15 p.m.",
-    services: "Medical, Dental (503-359-8505), Vision (503-352-8543), and Pharmacy (503-352-8852).",
-    notes: "Dental appts by phone only; no walk-ins.",
-    transportation: "Bus: 57"
-  },
-  {
-    category: "Health Care",
-    name: "Virginia Garcia - Hillsboro Clinic",
-    address: "226 SE Eighth Ave. Hillsboro, OR 97123",
-    phone: "503-601-7400",
-    hours: "Mon.-Fri. 8 a.m.-7 p.m.",
-    services: "Primary care clinic and Vision Clinic.",
-    notes: "Closed 1st, 3rd, 5th Wed 1-2 p.m. Vision clinic operated by Pacific University College of Optometry.",
-    transportation: "MAX Blue"
-  },
-  {
-    category: "Health Care",
-    name: "Virginia Garcia - Hillsboro Dental",
-    address: "730 SE Oak St. Ste. A and B, Hillsboro, OR 97123",
-    phone: "503-352-2354",
-    hours: "Mon.-Fri. 7 a.m.-6 p.m.",
-    services: "Dental",
-    notes: "Appointments by phone only. No walk-ins.",
-    transportation: "Bus: 46, 47, 57, MAX Blue"
-  },
-  {
-    category: "Health Care",
-    name: "Virginia Garcia - Hillsboro Women's Clinic",
-    address: "333 SE 7th Ave. Suite 550, Hillsboro, OR 97123",
-    phone: "503-359-5564",
-    hours: "Mon., Wed., Fri. 8 a.m.-5 p.m.; Tues., Thurs. 10 a.m.-7 p.m.",
-    services: "Women's health services.",
-    notes: "",
-    transportation: ""
-  },
-
-  // Housing and Rental Assistance
-  {
-    category: "Housing and Rental Assistance",
-    name: "Community Action",
-    address: "1001 SW Baseline St. Hillsboro, OR 97123",
-    phone: "503-615-0770",
-    hours: "Live phones Mon.-Thurs. starting 8:30 a.m.",
-    services: "Limited emergency rental assistance. 72-hour eviction notice required.",
-    notes: "Subject to availability. Must be behind on rent. English/Spanish.",
-    transportation: "Bus: 57"
-  },
-  {
-    category: "Housing and Rental Assistance",
-    name: "Open Door HousingWorks",
-    address: "34420 SW Tualatin Valley Hwy. Hillsboro, OR 97123",
-    phone: "503-640-6689",
-    hours: "Mon.-Fri. 9 a.m.-5 p.m.",
-    services: "Support in obtaining and retaining housing. Shelter referrals and housing services.",
-    notes: "",
-    transportation: "Bus: 57"
-  },
-  {
-    category: "Housing and Rental Assistance",
-    name: "Transponding Hope Tri-County Supportive Housing",
-    address: "Multiple locations",
-    phone: "503-475-0636",
+    category: "Housing & Homelessness",
+    name: "Cocoon House",
+    address: "Everett, WA 98201 (Call for specific access)",
+    phone: "(425) 877-5171",
     hours: "",
-    services: "Affordable community housing program for men, women and families with on-site staff support.",
-    notes: "",
+    services: "Short/long-term housing for teens 12-24. LGBTQIA+ friendly.",
+    notes: "cocoonhouse.org",
     transportation: ""
   },
   {
-    category: "Housing and Rental Assistance",
-    name: "Washington County Housing Services",
-    address: "111 NE Lincoln St., Ste. 200-L, Hillsboro, OR 97124",
-    phone: "503-846-4794",
-    hours: "Mon. 8:30-11:30 a.m.; Wed. 1-4 p.m.; Fri. 8:30-11:30 a.m.",
-    services: "Rental assistance and affordable housing opportunities (Section 8 and public housing).",
-    notes: "Most programs have waiting lists. English/Spanish.",
-    transportation: "Bus: 47, 48, MAX Blue"
+    category: "Housing & Homelessness",
+    name: "Domestic Violence Services Snohomish County",
+    address: "Everett, WA (Confidential)",
+    phone: "(425) 252-2873",
+    hours: "24-hour crisis line",
+    services: "Emergency shelter, legal advocacy.",
+    notes: "dvs-snoco.org",
+    transportation: ""
+  },
+  {
+    category: "Housing & Homelessness",
+    name: "Everett Housing Authority",
+    address: "Everett, WA 98201",
+    phone: "(425) 258-9222",
+    hours: "",
+    services: "Low Income Affordable/Public Housing.",
+    notes: "www.evha.org",
+    transportation: ""
+  },
+  {
+    category: "Housing & Homelessness",
+    name: "Housing Hope Everett",
+    address: "Everett, WA",
+    phone: "Call 2-1-1 for referral",
+    hours: "",
+    services: "Housing Assistance Programs.",
+    notes: "www.housinghope.org",
+    transportation: ""
+  },
+  {
+    category: "Housing & Homelessness",
+    name: "YWCA",
+    address: "2802 Broadway, Everett, WA",
+    phone: "(425) 258-2766",
+    hours: "",
+    services: "Emergency/transitional housing for women & families.",
+    notes: "www.ywcaworks.org",
+    transportation: ""
+  },
+  {
+    category: "Housing & Homelessness",
+    name: "Seattle Housing Authority",
+    address: "Seattle, WA 98119",
+    phone: "(206) 615-3300",
+    hours: "",
+    services: "Low Income Affordable/Public Housing.",
+    notes: "www.seattlehousing.org",
+    transportation: ""
+  },
+  {
+    category: "Housing & Homelessness",
+    name: "Catholic Community Services",
+    address: "Everett, WA",
+    phone: "Call 2-1-1 for referral",
+    hours: "",
+    services: "Housing navigation, shelter, HEN, rapid rehousing.",
+    notes: "ccsww.org",
+    transportation: ""
   },
 
-  // Legal Services
+  // Home Ownership
   {
-    category: "Legal Services",
-    name: "Lawyer Referral Service",
-    address: "Confidential",
-    phone: "503-684-3763 or 800-452-7636",
+    category: "Home Ownership",
+    name: "Housing Hope Team HomeBuilding",
+    address: "5830 Evergreen Way, Everett",
+    phone: "(425) 322-3723 x234",
+    hours: "",
+    services: "Sweat equity loans.",
+    notes: "homes@housinghope.org",
+    transportation: ""
+  },
+  {
+    category: "Home Ownership",
+    name: "Community Housing Improvement Program (CHIP)",
+    address: "2930 Wetmore Ave, Ste 8B, Everett",
+    phone: "(425) 257-8735",
+    hours: "",
+    services: "Low-interest loans for home repairs (Everett).",
+    notes: "www.everettwa.gov/CHIP",
+    transportation: ""
+  },
+  {
+    category: "Home Ownership",
+    name: "Homage - Minor Home Repair",
+    address: "5026 196th St SW, Lynnwood",
+    phone: "(425) 265-2222",
+    hours: "",
+    services: "Minor home repairs for safety/accessibility.",
+    notes: "www.homage.org",
+    transportation: ""
+  },
+
+  // Resource Centers
+  {
+    category: "Resource Center",
+    name: "Carnegie Resource Center",
+    address: "3001 Oakes Ave, Everett 98201",
+    phone: "(425) 434-4680",
+    hours: "",
+    services: "Housing navigation, legal services, DSHS benefits.",
+    notes: "pioneerhumanservices.org",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "Arlington Community Resource Center",
+    address: "103 E 3rd St (2nd floor), Arlington",
+    phone: "(360) 322-6988",
+    hours: "",
+    services: "Basic needs: food, clothing, shelter, utilities.",
+    notes: "www.voaww.org/acrc",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "Lake Stevens Community Resource Center",
+    address: "8021 20th St SE, Lake Stevens",
+    phone: "(425) 405-2252",
+    hours: "",
+    services: "Food, clothing, shelter, housing help.",
+    notes: "voaww.org/lscrc",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "Stanwood Community Resource Center",
+    address: "9612 271st St NW, Stanwood",
+    phone: "(360) 629-5257",
+    hours: "",
+    services: "Food, utilities, housing, eviction help.",
+    notes: "www.crc-sc.org",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "Sky Valley Food Bank",
+    address: "233 Sky River Pkwy, Monroe",
+    phone: "(360) 794-7959",
+    hours: "",
+    services: "Utility bills & basic needs.",
+    notes: "svfoodbank.org",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "Interfaith Family Shelter",
+    address: "Everett, WA",
+    phone: "(425) 200-5121",
+    hours: "",
+    services: "Homeless Prevention program.",
+    notes: "interfaithwa.org/prevention",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "Bridgeways",
+    address: "4716 61st Street NE, Marysville",
+    phone: "(425) 513-8213",
+    hours: "",
+    services: "Case management, rental assistance, job training.",
+    notes: "bridgeways.org",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "Saint Vincent De Paul",
+    address: "Everett, WA",
+    phone: "(425) 355-3504",
+    hours: "",
+    services: "Financial assistance, gas vouchers, prescription aid.",
+    notes: "svdpnsc.com",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "Hand In Hand",
+    address: "9502 19th Ave SE, Ste F, Everett",
+    phone: "(425) 374-2461",
+    hours: "",
+    services: "Basic needs, food resources.",
+    notes: "handinhandkids.org",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "Take the Next Step",
+    address: "202 S Sams St, Monroe",
+    phone: "(360) 794-1022",
+    hours: "",
+    services: "Basic needs, job coaching, gas cards.",
+    notes: "www.ttns.org",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "Linc Northwest / The Center at North Marysville",
+    address: "1424 172nd St NE, Marysville",
+    phone: "(360) 654-4205",
+    hours: "",
+    services: "Substance prevention, mentoring, mental health, clothing.",
+    notes: "www.lincnw.org",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "Holy Cross Outreach",
+    address: "6915 SR 92, Lake Stevens",
+    phone: "(360) 691-2636",
+    hours: "",
+    services: "Food, utility/rent bills (Lake Stevens/Granite Falls).",
+    notes: "hccclakestevens.org",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "Lutheran Community Services NW",
+    address: "2500 Hewitt Ave, Ste 300, Everett",
+    phone: "(425) 521-5811",
+    hours: "",
+    services: "Housing, mental health, DSHS apps, basic needs.",
+    notes: "lcsnw.org",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "The C-Suite Center for Hope",
+    address: "Marysville, WA",
+    phone: "(425) 626-5141",
+    hours: "",
+    services: "Resource navigation for cancer patients.",
+    notes: "www.c-suitehope.org",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "Sound Pathways",
+    address: "1625 E Marine View Dr, Ste 4, Everett",
+    phone: "(425) 258-2977",
+    hours: "",
+    services: "Substance use intervention, free clothing/hygiene.",
+    notes: "soundpathways.org",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "The Village on Casino Road",
+    address: "14 E Casino Rd, Everett",
+    phone: "(425) 610-3856",
+    hours: "",
+    services: "Utilities, food, counseling, free phones.",
+    notes: "villageoncasinoroad.org",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "Peer Seattle",
+    address: "1520 Bellevue Ave, Ste 100, Seattle 98122",
+    phone: "(206) 322-2437",
+    hours: "",
+    services: "Peer coaching, LGBTQIA2S+ priority.",
+    notes: "www.peerseattle.org",
+    transportation: ""
+  },
+  {
+    category: "Resource Center",
+    name: "Bethany Compassion Center",
+    address: "1421 Broadway, Everett",
+    phone: "(425) 512-9696",
+    hours: "",
+    services: "Navigation, financial assistance, laundry, showers.",
+    notes: "bethanycompassioncenter.com",
+    transportation: ""
+  },
+
+  // DSHS Offices
+  {
+    category: "DSHS Office",
+    name: "DSHS Arlington",
+    address: "3704 172nd St NE Ste P, Arlington",
+    phone: "877-501-2233",
     hours: "Mon.-Fri. 8 a.m.-5 p.m.",
-    services: "Referrals to attorneys in area of needed assistance.",
-    notes: "30-minute consultation is $35.",
+    services: "Apply for food/cash benefits.",
+    notes: "www.dshs.wa.gov",
     transportation: ""
   },
   {
-    category: "Legal Services",
-    name: "Oregon Crime Victims Law Center",
-    address: "Confidential",
-    phone: "503-208-8160",
-    hours: "Office visits by appointment only",
-    services: "Free legal representation regarding crime victims' rights; protective order cases for survivors of DV, sexual assault and stalking.",
-    notes: "Serves all Oregon counties.",
+    category: "DSHS Office",
+    name: "DSHS Everett",
+    address: "840 N Broadway Ste 200, Everett",
+    phone: "877-501-2233",
+    hours: "Mon.-Fri. 8 a.m.-5 p.m.",
+    services: "Apply for food/cash benefits.",
+    notes: "www.dshs.wa.gov",
     transportation: ""
   },
   {
-    category: "Legal Services",
-    name: "Oregon Law Center",
-    address: "230 NE Second Ave., Ste. F, Hillsboro, OR 97124",
-    phone: "503-640-4115 (Public Benefits: 1-800-520-5292)",
-    hours: "Call for walk-in hours",
-    services: "Civil legal services for low-income clients. No criminal or personal injury cases.",
-    notes: "English/Spanish. Please call main line for eviction defense.",
-    transportation: "Bus: 48, MAX Blue"
-  },
-  {
-    category: "Legal Services",
-    name: "Oregon Law Center Farmworker Program",
-    address: "138 NE 3rd Suite 203, Gresham, OR 97030",
-    phone: "503-726-4381",
-    hours: "Mon.-Fri. 9 a.m.-5 p.m.",
-    services: "Free legal assistance to low-income farmworkers (wage claims, discrimination, harassment, housing).",
-    notes: "No appointments necessary. English/Spanish/Mixteco.",
+    category: "DSHS Office",
+    name: "DSHS Lynnwood",
+    address: "20311 52nd Ave W Ste 100, Lynnwood",
+    phone: "877-501-2233",
+    hours: "Mon.-Fri. 8 a.m.-5 p.m.",
+    services: "Apply for food/cash benefits.",
+    notes: "www.dshs.wa.gov",
     transportation: ""
   },
   {
-    category: "Legal Services",
-    name: "St. Andrew Legal Clinic-Washington County",
-    address: "232 NE Lincoln St. Ste. H, Hillsboro, OR 97123",
-    phone: "503-648-1600",
-    hours: "Mon.-Fri. 9 a.m.-5 p.m. (Closed noon-1 p.m.)",
-    services: "Family law legal services for low-income individuals.",
-    notes: "Charges based on sliding scale. $40 for phone/online consultations.",
-    transportation: "Bus: 46, MAX"
+    category: "DSHS Office",
+    name: "DSHS Monroe",
+    address: "19705 State Route 2, Ste 100, Monroe",
+    phone: "877-501-2233",
+    hours: "Mon.-Fri. 8 a.m.-5 p.m.",
+    services: "Apply for food/cash benefits.",
+    notes: "www.dshs.wa.gov",
+    transportation: ""
   },
 
-  // Libraries
+  // Senior Services
   {
-    category: "Libraries",
-    name: "Washington County Libraries",
-    address: "Multiple locations",
-    phone: "Various",
-    hours: "Varies by location",
-    services: "Safe cooling/warming places, free wifi, public computers, and printers. Visit wccls.org/libraries.",
-    notes: "No library card needed to visit.",
-    transportation: "Varies by location."
+    category: "Senior Services",
+    name: "Homage",
+    address: "5026 196th St SW, Lynnwood",
+    phone: "(800) 422-2024",
+    hours: "",
+    services: "Resources for older adults & disabilities.",
+    notes: "homage.org",
+    transportation: ""
+  },
+  {
+    category: "Senior Services",
+    name: "Sunrise Services Senior Housing",
+    address: "7100 Evergreen Way, Everett",
+    phone: "(425) 212-4200",
+    hours: "",
+    services: "Housing placement for elderly/disabled.",
+    notes: "www.sunriseservicesinc.com",
+    transportation: ""
   },
 
-  // Meals
+  // Disability Resources
   {
-    category: "Meals",
-    name: "Community Cafe at St. Anthony Parish Center",
-    address: "9905 SW McKenzie St. Tigard, OR 97223",
-    phone: "503-639-4179",
-    hours: "Sun. 5:30-6:30 p.m.",
-    services: "Free hot dinners to go.",
-    notes: "Doors open 5:30 p.m.",
-    transportation: "Bus: 45, 94"
+    category: "Disability Resources",
+    name: "Arc of Snohomish County",
+    address: "127 E Intercity Ave, Ste C, Everett",
+    phone: "(425) 258-2459",
+    hours: "",
+    services: "Support for I/DD and families.",
+    notes: "www.arcsno.org",
+    transportation: ""
   },
   {
-    category: "Meals",
-    name: "Faith Café",
-    address: "5150 SW Watson Ave. Beaverton, OR 97005",
+    category: "Disability Resources",
+    name: "MSHH Donor Closet",
+    address: "409 Howell Way, Edmonds",
+    phone: "(425) 712-1807",
+    hours: "",
+    services: "Low-cost medical/mobility equipment.",
+    notes: "www.mshh-donorcloset.com",
+    transportation: ""
+  },
+  {
+    category: "Disability Resources",
+    name: "Center for Independence",
+    address: "502 State Ave, Ste 102, Marysville",
+    phone: "(360) 393-3890",
+    hours: "",
+    services: "Independent living skills, peer support.",
+    notes: "www.cfi-wa.org",
+    transportation: ""
+  },
+
+  // Immigrant Resources
+  {
+    category: "Immigrant Resources",
+    name: "Refugee and Immigrant Services NW",
+    address: "840 N Broadway, Ste 200, Everett",
+    phone: "(425) 388-9307",
+    hours: "",
+    services: "Legal immigration & naturalization services.",
+    notes: "risnw.org",
+    transportation: ""
+  },
+  {
+    category: "Immigrant Resources",
+    name: "Lutheran Community Services NW (Safe Route)",
+    address: "911 Stewart St, Seattle 98101",
+    phone: "(206) 694-5742",
+    hours: "",
+    services: "Legal services for refugees & immigrants.",
+    notes: "lcsnw.org/safe-route",
+    transportation: ""
+  },
+  {
+    category: "Immigrant Resources",
+    name: "Muslim Association of Puget Sound (MAPS)",
+    address: "5010 Grove St, Marysville",
+    phone: "(425) 861-9555",
+    hours: "",
+    services: "Rental assistance, food, legal clinic.",
+    notes: "mapsredmond.org",
+    transportation: ""
+  },
+
+  // Youth Resources
+  {
+    category: "Youth Resources",
+    name: "U-Turn at Cocoon House",
+    address: "3530 Colby Ave, Everett",
+    phone: "(425) 259-5802",
+    hours: "",
+    services: "Drop-in (ages 12-24). Showers, laundry, food.",
+    notes: "cocoonhouse.org",
+    transportation: ""
+  },
+  {
+    category: "Youth Resources",
+    name: "SnoCo Connect",
+    address: "301 Smith Ave, 4th floor, Everett",
+    phone: "(425) 374-8351",
+    hours: "",
+    services: "Support for 14-24 year olds.",
+    notes: "snococonnect.org",
+    transportation: ""
+  },
+  {
+    category: "Youth Resources",
+    name: "Lambert House",
+    address: "1818 15th Ave, Seattle 98102",
+    phone: "(206) 322-2515",
+    hours: "",
+    services: "LGBTQIA2S+ youth (10-22).",
+    notes: "www.lamberthouse.org",
+    transportation: ""
+  },
+
+  // Shelter
+  {
+    category: "Shelter",
+    name: "Cocoon House Central",
+    address: "Everett, WA",
+    phone: "(425) 877-5171",
+    hours: "",
+    services: "Teens under 18.",
+    notes: "Call 2-1-1",
+    transportation: ""
+  },
+  {
+    category: "Shelter",
+    name: "Esther's Place",
+    address: "Everett, WA",
+    phone: "(425) 512-0749",
+    hours: "",
+    services: "Women & children. Day services available.",
+    notes: "Call 2-1-1",
+    transportation: ""
+  },
+  {
+    category: "Shelter",
+    name: "Everett Gospel Mission Women & Children",
+    address: "Everett, WA",
+    phone: "(425) 740-2501",
+    hours: "",
+    services: "Women and children only.",
+    notes: "Call 2-1-1",
+    transportation: ""
+  },
+  {
+    category: "Shelter",
+    name: "Everett Gospel Mission Men's Shelter",
+    address: "Everett, WA",
+    phone: "(425) 740-2550",
+    hours: "",
+    services: "Men only.",
+    notes: "Call 2-1-1",
+    transportation: ""
+  },
+  {
+    category: "Shelter",
+    name: "YWCA Pathways for Women",
+    address: "Lynnwood, WA",
+    phone: "(425) 774-9843",
+    hours: "",
+    services: "Women and children only.",
+    notes: "Call 2-1-1",
+    transportation: ""
+  },
+  {
+    category: "Cold Weather Shelter",
+    name: "South Snohomish Emergency Shelter",
+    address: "17620 60th Ave W, Lynnwood (Maple Park Church)",
+    phone: "(206) 743-9843",
+    hours: "Open Nov-March when freezing.",
+    services: "Transport from Lynnwood City Hall.",
+    notes: "WeAllBelong.org",
+    transportation: ""
+  },
+
+  // Safe Parking
+  {
+    category: "Safe Parking",
+    name: "Cars to Housing (Interfaith Family Shelter)",
+    address: "Everett, WA",
+    phone: "(425) 200-5121",
+    hours: "",
+    services: "Families with children. Apply online.",
+    notes: "interfaithwa.org/cars-to-housing",
+    transportation: ""
+  },
+  {
+    category: "Safe Parking",
+    name: "Car Camp (Edmonds UU Church)",
+    address: "8109 224th St SW, Edmonds 98026",
+    phone: "(425) 778-0373",
+    hours: "",
+    services: "Women & families with kids.",
+    notes: "euuc.org",
+    transportation: ""
+  },
+  {
+    category: "Safe Parking",
+    name: "St. Jude Catholic Church",
+    address: "10526 166th Ave NE, Redmond 98052",
+    phone: "(425) 658-4982",
+    hours: "",
+    services: "Adults 18+.",
+    notes: "safeparking@stjude-redmond.org",
+    transportation: ""
+  },
+
+  // Showers & Laundry
+  {
+    category: "Showers & Laundry",
+    name: "Bethany Compassion Center",
+    address: "1421 Broadway, Everett",
+    phone: "(425) 512-9696",
+    hours: "Thurs 3-6pm & Sat 9am-12pm.",
+    services: "Showers & Laundry",
+    notes: "bethanycompassioncenter.com",
+    transportation: ""
+  },
+  {
+    category: "Showers & Laundry",
+    name: "Washed Mobile (Everett Transit)",
+    address: "3201 Smith Ave, Everett",
     phone: "",
-    hours: "Sun. 4 p.m.; last Thurs. of month 4 p.m.",
+    hours: "Daily 7:30am-6pm",
+    services: "Laundry.",
+    notes: "www.washedmobile.com",
+    transportation: ""
+  },
+  {
+    category: "Showers & Laundry",
+    name: "Washed Mobile (Port of Everett)",
+    address: "607 10th St, Everett",
+    phone: "",
+    hours: "Daily 6am-11pm",
+    services: "Laundry.",
+    notes: "www.washedmobile.com",
+    transportation: ""
+  },
+  {
+    category: "Showers & Laundry",
+    name: "Shower to the People (Everett)",
+    address: "2936 Rockefeller Ave, Everett",
+    phone: "",
+    hours: "Wed 4pm",
+    services: "Free showers.",
+    notes: "showertothepeople.yourwebsitespace.com",
+    transportation: ""
+  },
+  {
+    category: "Showers & Laundry",
+    name: "Shower to the People (Lynnwood)",
+    address: "6215 196th St SW, Lynnwood",
+    phone: "",
+    hours: "Sat 7:30am",
+    services: "Free showers.",
+    notes: "showertothepeople.yourwebsitespace.com",
+    transportation: ""
+  },
+  {
+    category: "Showers & Laundry",
+    name: "Everett Gospel Mission",
+    address: "3711 Smith Ave, Everett",
+    phone: "(425) 740-2550",
+    hours: "Women 11:30am-1pm; Men 1pm-4pm.",
+    services: "Showers",
+    notes: "egmission.org",
+    transportation: ""
+  },
+  {
+    category: "Showers & Laundry",
+    name: "Lynnwood Shower Site",
+    address: "19726 65th Ave W, Lynnwood",
+    phone: "",
+    hours: "Mon-Sat 10am-5pm",
+    services: "Free showers.",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Showers & Laundry",
+    name: "VOAWW Sky Valley",
+    address: "617 1st St, Sultan",
+    phone: "",
+    hours: "Mon & Wed 10am-2pm",
+    services: "Free showers.",
+    notes: "N/A",
+    transportation: ""
+  },
+
+  // Utilities
+  {
+    category: "Utilities",
+    name: "St. Vincent De Paul Project PRIDE",
+    address: "6424 Broadway, Everett 98203",
+    phone: "(425) 374-1243",
+    hours: "",
+    services: "Grants for PUD disconnect notices.",
+    notes: "svdpnsc.com/help",
+    transportation: ""
+  },
+  {
+    category: "Utilities",
+    name: "Snohomish PUD",
+    address: "N/A",
+    phone: "(425) 783-1000",
+    hours: "",
+    services: "Discounts up to 60%.",
+    notes: "www.snopud.com",
+    transportation: ""
+  },
+
+  // Legal
+  {
+    category: "Legal",
+    name: "Columbia Legal Services",
+    address: "N/A",
+    phone: "(800) 542-0794",
+    hours: "",
+    services: "Legal rights for low income.",
+    notes: "www.columbialegal.org",
+    transportation: ""
+  },
+  {
+    category: "Legal",
+    name: "Snohomish County Legal Services",
+    address: "N/A",
+    phone: "(425) 258-9283",
+    hours: "",
+    services: "Free legal aid for poverty.",
+    notes: "www.snocolegal.org",
+    transportation: ""
+  },
+  {
+    category: "Legal",
+    name: "Northwest Justice Project",
+    address: "N/A",
+    phone: "(888) 201-1012",
+    hours: "",
+    services: "Civil legal assistance.",
+    notes: "www.nwjustice.org",
+    transportation: ""
+  },
+  {
+    category: "Legal",
+    name: "Lavender Rights Project",
+    address: "911 E Pike St, #314, Seattle 98122",
+    phone: "(253) 325-1416",
+    hours: "",
+    services: "Black trans women/femmes focus.",
+    notes: "lavenderrightsproject.org",
+    transportation: ""
+  },
+
+  // Food Bank
+  {
+    category: "Food Bank",
+    name: "Arlington Community Food Bank",
+    address: "19118 63rd Ave NE, Arlington",
+    phone: "(360) 435-1631",
+    hours: "Mon 5-6pm, Wed 5:30-6:30pm, Fri 12-1pm.",
+    services: "Food Bank",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Food Bank",
+    name: "Canyon Hills Community Church",
+    address: "22125 17th Ave SE, Ste 111, Bothell",
+    phone: "(425) 488-4121",
+    hours: "Tue 11:30-1:30 & 5-6:30.",
+    services: "Food Bank",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Food Bank",
+    name: "Darrington Food Pantry",
+    address: "1045 Montague Ave, Darrington",
+    phone: "(360) 436-0646",
+    hours: "Mon 10-12, 1st/2nd Wed 10-12.",
+    services: "Food Bank",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Food Bank",
+    name: "Edmonds Food Bank",
+    address: "828 Caspers St, Edmonds",
+    phone: "(425) 778-5833",
+    hours: "Mon 3-5:30, Tue 9-12.",
+    services: "Food Bank",
+    notes: "edmondsfoodbank.org",
+    transportation: ""
+  },
+  {
+    category: "Food Bank",
+    name: "Bethel Baptist Church",
+    address: "2625 Hoyt Ave, Everett",
+    phone: "(425) 252-0249",
+    hours: "Tue-Fri 10am-4pm.",
+    services: "Food Bank",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Food Bank",
+    name: "Trinity Lutheran Aid Bank",
+    address: "2324 Lombard Ave, Everett",
+    phone: "(425) 252-1239",
+    hours: "Fri 10:30am-12:30pm.",
+    services: "Food Bank",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Food Bank",
+    name: "Salvation Army Food Bank",
+    address: "2525 Rucker Ave, Everett",
+    phone: "(425) 259-8129",
+    hours: "Mon/Fri 10-1, Tue-Thu 10-3.",
+    services: "Food Bank",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Food Bank",
+    name: "Everett Food Bank (North)",
+    address: "1230 Broadway Ave, Everett",
+    phone: "(425) 259-3191",
+    hours: "Mon/Wed/Thu 10-2; 2nd/4th Tue 3-6.",
+    services: "Food Bank",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Food Bank",
+    name: "Everett Food Bank (South)",
+    address: "805 W Casino Rd, Everett",
+    phone: "(425) 259-3191",
+    hours: "1st/3rd Tue 3-5pm.",
+    services: "Food Bank",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Food Bank",
+    name: "Holy Cross Catholic Church",
+    address: "6915 SR 92, Lake Stevens",
+    phone: "(360) 691-2636",
+    hours: "Tue 10-12 & 2-4.",
+    services: "Food Bank",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Food Bank",
+    name: "Lake Stevens Food Bank",
+    address: "2111 117th Ave NE, Lake Stevens",
+    phone: "(425) 334-3430",
+    hours: "Thu 1:30-6pm.",
+    services: "Food Bank",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Food Bank",
+    name: "Lynnwood Food Bank",
+    address: "5320 176th St SW, Lynnwood",
+    phone: "(425) 745-1635",
+    hours: "Wed 11-5, Fri 10-1.",
+    services: "Food Bank",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Food Bank",
+    name: "Marysville Community Food Bank",
+    address: "4150 88th St NE, Marysville",
+    phone: "(360) 658-1054",
+    hours: "Mon/Fri 9-11, Tue 3-6.",
+    services: "Food Bank",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Food Bank",
+    name: "Sky Valley Food Bank",
+    address: "233 Sky River Parkway, Monroe",
+    phone: "(360) 794-7959",
+    hours: "Wed 2pm-5pm.",
+    services: "Food Bank",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Food Bank",
+    name: "Mill Creek Food Bank",
+    address: "4326 148th St SE, Mill Creek",
+    phone: "(425) 316-3333",
+    hours: "Mon/Thu 4-7pm.",
+    services: "Food Bank",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Food Bank",
+    name: "Snohomish Community Food Bank",
+    address: "1330 Ferguson Park Rd, Snohomish",
+    phone: "(360) 568-7993",
+    hours: "Tue 3-6, Fri 10-1.",
+    services: "Food Bank",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Food Bank",
+    name: "Sultan Food Bank",
+    address: "703 1st St, Sultan",
+    phone: "(360) 793-2400",
+    hours: "Thu 5-7, Fri 9:30-12.",
+    services: "Food Bank",
+    notes: "N/A",
+    transportation: ""
+  },
+
+  // Health
+  {
+    category: "Health",
+    name: "Community Health Center (Arlington)",
+    address: "326 S Stillaguamish Ave, Arlington",
+    phone: "(360) 572-5400",
+    hours: "",
+    services: "Medical, Dental, Pharmacy.",
+    notes: "chcsno.org",
+    transportation: ""
+  },
+  {
+    category: "Health",
+    name: "Community Health Center (Edmonds)",
+    address: "23320 Hwy 99, Edmonds",
+    phone: "(425) 640-5500",
+    hours: "",
+    services: "Medical, Dental, Pharmacy.",
+    notes: "chcsno.org",
+    transportation: ""
+  },
+  {
+    category: "Health",
+    name: "Community Health Center (Everett Central)",
+    address: "4201 Rucker Ave, Everett",
+    phone: "(425) 382-4000",
+    hours: "",
+    services: "Medical, Dental, Pharmacy.",
+    notes: "chcsno.org",
+    transportation: ""
+  },
+  {
+    category: "Health",
+    name: "Community Health Center (Lynnwood)",
+    address: "4111 194th St SW, Lynnwood",
+    phone: "(425) 835-5200",
+    hours: "",
+    services: "Medical, Dental, Pharmacy.",
+    notes: "chcsno.org",
+    transportation: ""
+  },
+  {
+    category: "Health",
+    name: "Safe Harbor Free Clinic",
+    address: "7209 265th St NW, Ste 203/204, Stanwood",
+    phone: "(425) 870-7384",
+    hours: "",
+    services: "Free healthcare for uninsured.",
+    notes: "safeharborfreeclinic.org",
+    transportation: ""
+  },
+  {
+    category: "Health",
+    name: "Lahai Health",
+    address: "19820 Scriber Lake Rd, Ste 2, Lynnwood",
+    phone: "(206) 363-4105",
+    hours: "",
+    services: "Medical, Dental, Mental Health.",
+    notes: "lahai.org",
+    transportation: ""
+  },
+  {
+    category: "Health",
+    name: "Sea Mar Community Health Centers",
+    address: "1509 32nd St, Everett",
+    phone: "(425) 312-0202",
+    hours: "",
+    services: "Community health.",
+    notes: "seamar.org",
+    transportation: ""
+  },
+
+  // Mental Health
+  {
+    category: "Mental Health",
+    name: "Providence Behavioral Health Urgent Care",
+    address: "1330 Rockefeller, Ste 140, Everett",
+    phone: "(425) 261-4210",
+    hours: "",
+    services: "Urgent care for adults 18+.",
+    notes: "providence.org",
+    transportation: ""
+  },
+  {
+    category: "Mental Health",
+    name: "Marysville Bridgeways Clubhouse",
+    address: "4716 61st St NE, Marysville",
+    phone: "(425) 513-8213",
+    hours: "",
+    services: "Mental illness support.",
+    notes: "bridgeways.org",
+    transportation: ""
+  },
+
+  // Substance Use
+  {
+    category: "Substance Use",
+    name: "Everett Recovery Café",
+    address: "1212 California St, Everett",
+    phone: "(425) 258-5630",
+    hours: "",
+    services: "Drug/alcohol free community.",
+    notes: "everettrecoverycafe.org",
+    transportation: ""
+  },
+  {
+    category: "Substance Use",
+    name: "Snohomish County Diversion Center",
+    address: "1818 Wall St, Everett",
+    phone: "(425) 471-6100",
+    hours: "",
+    services: "Shelter for homeless with substance use.",
+    notes: "N/A",
+    transportation: ""
+  },
+  {
+    category: "Substance Use",
+    name: "Ideal Option",
+    address: "4301 Hoyt Ave, Everett",
+    phone: "(877) 522-1275",
+    hours: "",
+    services: "Medication-assisted treatment.",
+    notes: "idealoption.com",
+    transportation: ""
+  }
+];
