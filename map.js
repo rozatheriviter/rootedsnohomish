@@ -1,13 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+    if (typeof L === 'undefined') {
+        console.error('Leaflet JS is not loaded.');
+        return;
+    }
+
     // Initialize the map centered on Snohomish County
     // Coordinates for Snohomish County, WA roughly: 48.0, -121.7 (approx center) or Everett: 47.97, -122.20
     const map = L.map('map').setView([48.0, -122.0], 10);
 
-    // Add "Transport Map" / "ÖPNVkarte" tile layer
-    // This is a free tile layer based on OpenStreetMap
-    L.tileLayer('https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png', {
+    // Add standard OpenStreetMap tile layer
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
-        attribution: 'Map <a href="https://memomaps.de/">memomaps.de</a> <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
     // Iterate through resources and add markers
