@@ -16,12 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (resource.lat && resource.lng) {
                 const marker = L.marker([resource.lat, resource.lng]).addTo(map);
 
+                // Content: Name, Category, Transportation
+                // Styling: Handled by classes defined in style.css (.map-popup, etc.)
                 const popupContent = `
-                    <strong>${resource.name}</strong><br>
-                    <span class="card-category">${resource.category}</span><br>
-                    ${resource.address}<br>
-                    ${resource.phone}<br>
-                    <a href="${resource.notes.startsWith('http') ? resource.notes : 'https://' + resource.notes}" target="_blank">Website</a>
+                    <div class="map-popup">
+                        <h3>${resource.name}</h3>
+                        <span class="popup-category">${resource.category}</span>
+                        <p class="popup-transport">
+                            <strong>Transportation:</strong> ${resource.transportation || 'N/A'}
+                        </p>
+                    </div>
                 `;
 
                 marker.bindPopup(popupContent);
