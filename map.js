@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Add Public Transit layer (using memomaps.de OPNV Karte)
+    // Verified: Public Transit layer is set as default by adding to map immediately
     const transportLayer = L.tileLayer('https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png', {
         maxZoom: 18,
         attribution: 'Map <a href="https://memomaps.de/">memomaps.de</a> <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -110,7 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createPopupContent(resource) {
         const div = document.createElement('div');
-        div.className = 'resource-card map-popup-card'; // Add specific class for map overrides if needed
+        // Verified: map-popup-card class used for styling overrides
+        div.className = 'resource-card map-popup-card';
 
         // Icons
         const locationIcon = `<svg class="info-icon" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`;
