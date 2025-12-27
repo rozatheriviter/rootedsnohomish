@@ -128,7 +128,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let addressLink = '#';
         let addressDisplay = resource.address;
         if (resource.address && resource.address.toLowerCase() !== 'confidential' && resource.address.toLowerCase() !== 'multiple locations') {
-            addressLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(resource.address)}`;
+            // Strip text in parentheses for better geocoding
+            const cleanAddress = resource.address.replace(/\s*\(.*?\)/g, '').trim();
+            addressLink = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(cleanAddress)}&travelmode=transit`;
         }
 
         // Build phone link
@@ -182,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div class="action-row">
-                ${addressLink !== '#' ? `<a href="${addressLink}" target="_blank" class="btn btn-secondary" aria-label="View map for ${resource.name}">Map</a>` : ''}
+                ${addressLink !== '#' ? `<a href="${addressLink}" target="_blank" class="btn btn-secondary" aria-label="Get directions to ${resource.name}">Directions</a>` : ''}
                 ${phoneLink !== '#' ? `<a href="${phoneLink}" class="btn btn-primary" aria-label="Call ${resource.name}">Call</a>` : ''}
             </div>
         `;
