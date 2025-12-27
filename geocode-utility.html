@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geocode Utility</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        textarea { width: 100%; height: 400px; margin-top: 20px; }
+        #status { margin-bottom: 20px; }
+        .progress { color: blue; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Geocode Utility</h1>
+    <p>This tool iterates through <code>resources.js</code>, fetches coordinates from OpenStreetMap, and generates updated JSON.</p>
+    <div id="status">Ready to start...</div>
+    <button onclick="startGeocoding()">Start Geocoding</button>
+
+    <textarea id="output" placeholder="Resulting JSON will appear here..."></textarea>
+
+    <!-- Load existing resources -->
+    <script src="resources.js"></script>
+
+    <script>
+        const outputArea = document.getElementById('output');
+        const statusDiv = document.getElementById('status');
+
+        async function startGeocoding() {
+            outputArea.value = '';
+            statusDiv.innerHTML = 'Starting...';
+
+            const updatedResources = [];
+
+            for (let i = 0; i < resources.length; i++) {
+                const resource = resources[i];
+                const originalAddress = resource.address;
+
+                statusDiv.innerHTML = `Processing ${i + 1}/${resources.length}: ${resource.name}...`;
+
+                // specific logic to skip "N/A" or empty addresses
+                if (!originalAddress || originalAddress === "N/A" || originalAddress.trim() === "") {
+                     updatedResources.push(resource);
+                     continue;
+                }
+
+                // Clean address: remove text in parentheses
+                const cleanAddress = originalAddress.replace(/\([^)]*\)/g, '').trim();
+
+                try {
+                    const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(cleanAddress)}`);
+                    const data = await response.json();
+
+                    if (data && data.length > 0) {
+                        // Nominatim returns lat/lon as strings
+                        resource.lat = parseFloat(data[0].lat);
+                        resource.lng = parseFloat(data[0].lon);
+                    } else {
+                        console.warn(`No coordinates found for: ${cleanAddress}`);
+                    }
+                } catch (error) {
+                    console.error(`Error geocoding ${cleanAddress}:`, error);
+                }
+
+                updatedResources.push(resource);
+
+                // Wait 1 second
+                await new Promise(resolve => setTimeout(resolve, 1000));
+            }
+
+            statusDiv.innerHTML = 'Done! Copy the JSON below.';
+            outputArea.value = "const resources = " + JSON.stringify(updatedResources, null, 2) + ";";
+        }
+    </script>
+</body>
+</html>
