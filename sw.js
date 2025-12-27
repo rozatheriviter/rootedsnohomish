@@ -1,4 +1,4 @@
-const CACHE_NAME = 'rooted-snohomish-v1';
+const CACHE_NAME = 'rooted-snohomish-v2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -6,7 +6,10 @@ const ASSETS_TO_CACHE = [
   './submit-resource.html',
   './style.css',
   './app.js',
-  './resources.js'
+  './resources.js',
+  './map.html',
+  './map.js',
+  './manifest.json'
 ];
 
 // Install Event - Cache Files
