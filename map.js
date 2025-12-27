@@ -120,7 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Build address link
         let addressLink = '#';
         if (resource.address && resource.address.toLowerCase() !== 'confidential' && resource.address.toLowerCase() !== 'multiple locations') {
-            addressLink = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(resource.address)}&travelmode=transit`;
+            // Strip text in parentheses for better geocoding
+            const cleanAddress = resource.address.replace(/\s*\(.*?\)/g, '').trim();
+            addressLink = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(cleanAddress)}&travelmode=transit`;
         }
 
         // Build phone link
