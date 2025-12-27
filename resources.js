@@ -1,4 +1,4 @@
-const resources = [
+window.siteResources = [
   {
     "category": "Housing & Homelessness",
     "name": "Coordinated Entry (Carnegie Resource Center)",

@@ -34,11 +34,11 @@
 
             const updatedResources = [];
 
-            for (let i = 0; i < resources.length; i++) {
-                const resource = resources[i];
+            for (let i = 0; i < window.siteResources.length; i++) {
+                const resource = window.siteResources[i];
                 const originalAddress = resource.address;
 
-                statusDiv.innerHTML = `Processing ${i + 1}/${resources.length}: ${resource.name}...`;
+                statusDiv.innerHTML = `Processing ${i + 1}/${window.siteResources.length}: ${resource.name}...`;
 
                 // specific logic to skip "N/A" or empty addresses
                 if (!originalAddress || originalAddress === "N/A" || originalAddress.trim() === "") {
