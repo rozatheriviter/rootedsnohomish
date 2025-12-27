@@ -510,6 +510,7 @@ footer {
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
     margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 /* Map Popup Styles */
