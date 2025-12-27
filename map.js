@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     init();
 
     function init() {
-        if (typeof resources !== 'undefined') {
+        if (typeof window.siteResources !== 'undefined') {
             renderCategories();
             updateMap();
             setupEventListeners();
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function getUniqueCategories() {
-        const categories = new Set(resources.map(r => r.category));
+        const categories = new Set(window.siteResources.map(r => r.category));
         return Array.from(categories).sort();
     }
 
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         markers = [];
 
         // Filter resources
-        const filteredResources = resources.filter(resource => {
+        const filteredResources = window.siteResources.filter(resource => {
             return currentCategory === 'all' || resource.category === currentCategory;
         });
 

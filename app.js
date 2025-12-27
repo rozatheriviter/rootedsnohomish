@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function init() {
-        if (typeof resources !== 'undefined') {
+        if (typeof window.siteResources !== 'undefined') {
             renderCategories();
             renderResources();
             setupEventListeners();
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function getUniqueCategories() {
-        const categories = new Set(resources.map(r => r.category));
+        const categories = new Set(window.siteResources.map(r => r.category));
         return Array.from(categories).sort();
     }
 
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function filterResources() {
-        return resources.filter(resource => {
+        return window.siteResources.filter(resource => {
             // Category Match
             const categoryMatch = currentCategory === 'all' || resource.category === currentCategory;
 
