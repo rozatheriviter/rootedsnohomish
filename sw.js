@@ -1,4 +1,4 @@
-const CACHE_NAME = 'rooted-snohomish-v2';
+const CACHE_NAME = 'rooted-snohomish-cache';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -14,6 +14,9 @@ const ASSETS_TO_CACHE = [
 
 // Install Event - Cache Files
 self.addEventListener('install', event => {
+  // Force this new service worker to become the active service worker
+  self.skipWaiting();
+
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
@@ -25,6 +28,9 @@ self.addEventListener('install', event => {
 
 // Activate Event - Clean up old caches
 self.addEventListener('activate', event => {
+  // Take control of all pages immediately
+  event.waitUntil(clients.claim());
+
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
@@ -39,16 +45,28 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Fetch Event - Serve from Cache, fall back to Network
+// Fetch Event - Network First, fall back to Cache
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request)
+    fetch(event.request)
       .then(response => {
-        // Cache hit - return response
-        if (response) {
+        // If we got a valid response, clone it and update the cache
+        if (!response || response.status !== 200 || response.type !== 'basic') {
           return response;
         }
-        return fetch(event.request);
+
+        const responseToCache = response.clone();
+
+        caches.open(CACHE_NAME)
+          .then(cache => {
+            cache.put(event.request, responseToCache);
+          });
+
+        return response;
+      })
+      .catch(() => {
+        // Network failed, try to serve from cache
+        return caches.match(event.request);
       })
   );
 });
